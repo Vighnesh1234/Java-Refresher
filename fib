@@ -1,0 +1,13 @@
+public class Fib {
+    public static void main(String args[]) {
+        int fibnum,temp=0,oldnum=1;
+       for (int i =0;i<10;i++){
+         
+          fibnum=temp+oldnum;
+          temp=oldnum;
+          oldnum=fibnum;
+           System.out.println(fibnum);
+       }
+
+    }
+}

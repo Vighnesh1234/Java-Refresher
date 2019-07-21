@@ -1,0 +1,69 @@
+public class SimpleLinkedList {
+    
+    Node Head;
+    
+   
+    
+   static class Node{
+        String data;
+        Node next;
+        Node(String d)
+        {
+           data=d;
+             next=null;
+        }
+   }
+   void printList(){
+       Node n=Head;
+       
+       while(n!=null){
+           System.out.println(n.data+"");
+           n=n.next;
+       }
+   }
+  
+  
+  void makeHead(String new_data){
+      Node new_head=new Node(new_data);
+      new_head.next=Head;
+      Head=new_head;
+  }
+  
+   void append(String new_data){
+      Node new_tail=new Node(new_data);//Generating new node with data and a pointer next
+     if(Head==null){
+          Head=new Node(new_data);
+    return;
+     }
+    
+    
+    Node last=Head;// travsersing to find the last node
+    while (last.next!=null)
+    last=last.next;
+    
+    last.next=new_tail;//linking the last node to the appending node
+    return;
+  }
+  
+  
+  
+  
+    
+    public static void main(String args[]) {
+       SimpleLinkedList simple=new SimpleLinkedList();//creating object
+       simple.Head =new Node("1");//pointing to the reference of parent class to the reference of child and initializing the contructure
+       Node second=new Node("2");
+Node third=new Node("3");
+      
+        
+        simple.Head.next=second;//linking the head to next node
+        second.next=third;//linking the 2nd to 3rd node
+     //   System.out.println(second);//printing the content of 2nd node
+     
+     System.out.println("Before adding head");
+        simple.printList();
+         System.out.println("Appending at the end");
+        simple.append("100");
+          simple.printList();
+    }
+}

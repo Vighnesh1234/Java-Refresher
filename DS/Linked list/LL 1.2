@@ -1,0 +1,51 @@
+public class SimpleLinkedList {
+    
+    Node Head;
+    
+   
+    
+   static class Node{
+        String data;
+        Node next;
+        Node(String d)
+        {
+           data=d;
+             next=null;
+        }
+   }
+   void printList(){
+       Node n=Head;
+       
+       while(n!=null){
+           System.out.println(n.data+"");
+           n=n.next;
+       }
+   }
+  
+  
+  void makeHead(String new_data){
+      Node new_head=new Node(new_data);
+      new_head.next=Head;
+      Head=new_head;
+  }
+  
+  
+    
+    public static void main(String args[]) {
+       SimpleLinkedList simple=new SimpleLinkedList();//creating object
+       simple.Head =new Node("1");//pointing to the reference of parent class to the reference of child and initializing the contructure
+       Node second=new Node("2");
+Node third=new Node("3");
+      
+        
+        simple.Head.next=second;//linking the head to next node
+        second.next=third;//linking the 2nd to 3rd node
+     //   System.out.println(second);//printing the content of 2nd node
+     
+     System.out.println("Before adding head");
+        simple.printList();
+         System.out.println("After adding head");
+        simple.makeHead("100");
+          simple.printList();
+    }
+}

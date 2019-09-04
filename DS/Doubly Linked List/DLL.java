@@ -53,4 +53,33 @@ public class MyClass {
         
         
     }
+    
+    
+     public void append(int new_data){
+          //Allocate memory to the data
+         Node new_node=new Node(new_data);
+         new_node.next=null;
+         
+         if(head==null)
+         {
+             new_node.prev=null;
+            head=new_node;
+         }
+         
+         last=head;
+         
+         //iterating over the list 
+         while(last.next!=null)
+         {
+             last=last.next;
+         }
+         
+         last.next=new_node;
+         new_node.prev=last;
+         
+         
+         
+     }
+    
+    
 }

@@ -80,6 +80,18 @@ public class MyClass {
          
          
      }
+    //
     
+      public void insertBefore(node givenNode,int data){
+          //Allocate memory to the data
+         Node newNode=new Node(data);
+         newNode.prev=givenNode.prev;
+         givenNode.prev=newNode;
+         newNode.next=givenNode;
+         
+        
+        
+         
+     }
     
 }
